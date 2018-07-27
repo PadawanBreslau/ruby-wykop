@@ -1,4 +1,5 @@
 require 'rest-client'
+require 'json'
 
 module Wykop
   class Request
@@ -23,11 +24,13 @@ module Wykop
 
       response = JSON.parse RestClient::Request.execute method: method, url: url, payload: post_params, headers: { apisign: md5 }
 
-      if response['error']
-        raise response['error']
-      end
+      raise response['error']["message"] if error?(response)
 
       response
+    end
+
+    def error?(response)
+      response.kind_of?(Hash) && response['error']
     end
   end
 end
