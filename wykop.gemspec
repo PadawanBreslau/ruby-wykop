@@ -6,12 +6,12 @@ require 'wykop/version'
 Gem::Specification.new do |spec|
   spec.name          = "ruby-wykop"
   spec.version       = Wykop::VERSION
-  spec.authors       = ["rlesniak"]
-  spec.email         = ["rafallesniak24@gmail.com"]
+  spec.authors       = ["PadawanBreslau"]
+  spec.email         = ["st.zawadzki@gmail.com"]
 
   spec.summary       = "Wykop.pl API client library"
   spec.description   = "Simple Wykop.pl API"
-  spec.homepage      = "https://github.com/rlesniak"
+  spec.homepage      = "https://github.com/PadawanBreslau"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
